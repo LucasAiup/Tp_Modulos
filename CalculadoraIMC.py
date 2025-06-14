@@ -9,7 +9,7 @@ class calculadora_IMC():
     def calcular_IMC(self):
         return round((self.peso/(self.altura**2)), 2)
     def calcular_porcentaje_grasa(self):
-        Valor_Genero=self.calcular_valor_genero(0)
+        Valor_Genero=self.calcular_valor_genero_grasa()
         imc=self.calcular_IMC()
         resultado=(1.2*imc)+(0.23*self.edad)-5.4-Valor_Genero 
         return resultado
@@ -25,7 +25,7 @@ class calculadora_IMC():
         min_result= tmb*0.80
         max_result= tmb*0.85
         return (f"Para adelgazar lo recomendado es que consumas entre: {round(min_result, 2)} y {round(max_result, 2)} calorias por dia")
-    def calcular_valor_genero(self, a):
+    def calcular_valor_genero_grasa(self):
         if (self.sexo=="h"):
             return 10.8
         else:
